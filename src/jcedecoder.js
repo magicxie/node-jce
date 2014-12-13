@@ -51,10 +51,15 @@ var jceReader = (function() {
 
 var jceDecoder = (function(reader){
 
+    var result = {};
 
+    var decodeType = function(reader){
+        var type = reader.read();
+        eval(jceTyps[type]);
+    }
 
     return function(input){
-       return reader(input).read();
+        result = decodeType(reader(input));
     }
 
 })(jceReader);
