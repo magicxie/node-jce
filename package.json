@@ -24,5 +24,8 @@
   "homepage": "https://github.com/magicxie/node-jce",
   "devDependencies": {
     "mocha": "^2.0.1"
+  },
+  "dependencies": {
+    "should": "^4.4.1"
   }
 }

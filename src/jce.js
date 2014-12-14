@@ -2,6 +2,7 @@
  * Created by magic on 2014/12/13.
  */
 "use strict";
+
 var jceTyps = (function(){
     return {
         0 : 'Char',
@@ -30,6 +31,8 @@ var jceReader = (function() {
         if(input == null){
             throw new Error('input can not be null!');
         }
+
+        console.info('input is', input, 'and hex is', input.toString(16));
 
         this.input = input.toString(16);
         this.indicator = -1;
@@ -63,3 +66,14 @@ var jceDecoder = (function(reader){
     }
 
 })(jceReader);
+
+//export
+
+exports.jceTyps = jceTyps;
+exports.jceReader = jceReader;
+exports.jceDecoder = jceDecoder;
+
+var isDebug = false;
+exports.debug = function(){
+    isDebug = ture;
+};
