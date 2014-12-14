@@ -28,23 +28,31 @@ var jceReader = (function() {
 
     var _reader = function(input){
 
-        if(input == null){
+        if(input == null || input == undefined){
             throw new Error('input can not be null!');
         }
 
-        console.info('input is', input, 'and hex is', input.toString(16));
+        console.log('input is', input, 'and hex is', input.toString(16));
 
         this.input = input.toString(16);
-        this.indicator = -1;
+        this.indicator = 0;
 
     };
 
     _reader.prototype.read = function(){
-       //TODO read n length arguments
+
+       //read n length arguments
+       var steps = 1;
+       if(arguments.length == 1){
+           steps = arguments[0];
+       }
+
        if(this.indicator == this.input.length){
            return -1;
        }else {
-           return this.input.charAt(this.indicator++);
+           var result = this.input.substr(this.indicator,steps);
+           this.indicator += steps;
+           return result;
        }
     }
 
