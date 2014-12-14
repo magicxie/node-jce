@@ -1,0 +1,28 @@
+{
+  "name": "jce",
+  "version": "0.0.0",
+  "description": "jce js port",
+  "main": "src/jce.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magicxie/node-jce.git"
+  },
+  "keywords": [
+    "jce"
+  ],
+  "author": "magicxie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magicxie/node-jce/issues"
+  },
+  "homepage": "https://github.com/magicxie/node-jce",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
+}
