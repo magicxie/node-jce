@@ -1,13 +1,13 @@
 require('should');
 var jce = require('../src/jce');
+var jceReader = jce.jceReader;
+var jceDecoder = jce.jceDecoder;
 
 describe('jceReader', function(){
 
-    var jceReader =  jce.jceReader;
-
     beforeEach(function(){
 
-    })
+    });
 
     it('should read out a byte', function(){
         var reader = new jceReader(0x01);
@@ -51,4 +51,34 @@ describe('jceReader', function(){
 
     });
 
-})
+    it('should throw error when read zero step', function() {
+
+        (function () {
+            new jceReader(00).read(0);
+        }).should.throwError();
+    });
+
+    it('should throw error when read negative step', function() {
+        (function () {
+            new jceReader(00).read(-1);
+        }).should.throwError();
+    });
+
+    it('should throw error when read illegal number step', function(){
+        (function(){ new jceReader(00).read('c');}).should.throwError();
+    });
+
+});
+
+describe('jceDecoder', function() {
+
+    beforeEach(function () {
+
+    });
+
+    it('should throw error when read illegal number step', function(){
+        var decoder = new jceDecoder(0x00011C2C3C);
+        decoder.decode();
+    });
+
+});
