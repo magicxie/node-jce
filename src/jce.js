@@ -130,5 +130,5 @@ exports.jceDecoder = jceDecoder;
 
 var isDebug = false;
 exports.debug = function(){
-    isDebug = ture;
+    isDebug = true;
 };
