@@ -76,7 +76,7 @@ describe('jceDecoder', function() {
 
     });
 
-    it('should throw error when read illegal number step', function(){
+    it('should be ok when decoder setup', function(){
         var decoder = new jceDecoder(0x00011C2C3C);
         decoder.decode();
     });

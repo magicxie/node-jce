@@ -43,7 +43,7 @@ var jceReader = (function() {
 
         }
 
-        console.log('input is', input, 'and hex is', input.toString(16));
+        console.log('input is', input, 'and hex is', input.toString(16),'\n');
 
         this.input = input.toString(16);
         this.indicator = 0;
@@ -110,12 +110,12 @@ var jceDecoder = (function(reader){
 
     var _decoder = function(input){
         this.rawInput = input;
-        this.reader = reader(this.rawInput);
+        this.reader = new reader(this.rawInput);
     };
 
     _decoder.prototype.decode = function(){
         var type = this.reader.read();
-        console.log(jceTyps[type]);
+        console.log('jce type is', jceTyps[type]);
     }
 
     return _decoder;
