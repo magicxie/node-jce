@@ -115,7 +115,10 @@ var jceDecoder = (function(reader){
 
     _decoder.prototype.decode = function(){
         var type = this.reader.read();
-        console.log('jce type is', jceTyps[type]);
+        while(type != -1) {
+            console.log('jce type is', jceTyps[type]);
+            type = this.reader.read();
+        }
     }
 
     return _decoder;
